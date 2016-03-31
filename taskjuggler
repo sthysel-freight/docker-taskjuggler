@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# docker run -it --rm -v ${PWD}:/data -w /data sthysel/taskjuggler tj3 -o ./testrun template.tjp 
+
 set -e
 
 echo "Spinning up taskjuggler container"
@@ -20,6 +22,6 @@ else
 fi
 
 # map local homedir to planner homedir
-VOLUMES="-v ${HOME}:/home/planner/"
+VOLUMES="-v ${PWD}:/data/"
 
-exec docker run --rm -it $DOCKER_ADDR $COMPOSE_OPTIONS $VOLUMES $IMAGE $@
+exec docker run --rm -it $DOCKER_ADDR $COMPOSE_OPTIONS $VOLUMES -w /data $IMAGE tj3 $@
