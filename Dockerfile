@@ -24,4 +24,4 @@ RUN useradd -u 1000 -g group planner
 
 USER planner
 
-CMD taskjuggler
+CMD tj3

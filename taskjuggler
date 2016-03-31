@@ -2,6 +2,8 @@
 
 set -e
 
+echo "Spinning up taskjuggler container"
+
 VERSION="latest"
 IMAGE="sthysel/taskjuggler:$VERSION"
 
@@ -20,4 +22,4 @@ fi
 # map local homedir to planner homedir
 VOLUMES="-v ${HOME}:/home/planner/"
 
-exec docker run --rm -ti $DOCKER_ADDR $COMPOSE_OPTIONS $VOLUMES $IMAGE $@
+exec docker run --rm -it $DOCKER_ADDR $COMPOSE_OPTIONS $VOLUMES $IMAGE $@

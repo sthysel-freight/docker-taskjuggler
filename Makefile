@@ -1,4 +1,4 @@
-.PHONY: all build run
+.PHONY: all build testrun push
 
 all: build
 
@@ -10,8 +10,9 @@ Dockerfile: Dockerfile.in
 build: Dockerfile
 	docker build -t sthysel/taskjuggler .
 
-run:
-	docker run -it --rm sthysel/taskjuggler -v ${PWD}:/data -w /data
+testrun:
+	docker run -it --rm -v ${PWD}:/data -w /data sthysel/taskjuggler tj3 -o ./testrun template.tjp 
 
 push:
 	docker push sthysel/taskjuggler
+
