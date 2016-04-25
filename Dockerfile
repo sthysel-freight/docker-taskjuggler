@@ -22,6 +22,10 @@ RUN gem install taskjuggler
 RUN groupadd group -g 1000
 RUN useradd -u 1000 -g group planner
 
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 USER planner
 
-CMD tj3
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["help"]

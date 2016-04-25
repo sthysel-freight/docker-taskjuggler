@@ -10,6 +10,9 @@ Dockerfile: Dockerfile.in
 build: Dockerfile
 	docker build -t sthysel/taskjuggler .
 
+run:
+	docker run -it --rm sthysel/taskjuggler
+
 testrun:
 	docker run -it --rm -v ${PWD}:/data -w /data sthysel/taskjuggler tj3 -o ./testrun template.tjp 
 

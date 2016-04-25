@@ -24,5 +24,6 @@ $ make testrun
 # Install 
 
 ```
-$ sudo bash -c 'JRUN=/usr/local/bin/taskjuggler; curl -L https://raw.githubusercontent.com/sthysel/docker-taskjuggler/master/taskjuggler > $JRUN && chmod +x $JRUN'
+$ sudo bash -c 'JRUN=/usr/local/bin/tj; curl -L https://raw.githubusercontent.com/sthysel/docker-taskjuggler/master/tj > $JRUN && chmod +x $JRUN'
+$ sudo bash -c 'JMAN=/usr/local/bin/tjman; curl -L https://raw.githubusercontent.com/sthysel/docker-taskjuggler/master/tjman > $JMAN && chmod +x $JMAN'
 ```

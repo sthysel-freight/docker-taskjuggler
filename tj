@@ -24,4 +24,4 @@ fi
 # map local homedir to planner homedir
 VOLUMES="-v ${PWD}:/data/"
 
-exec docker run --rm -it $DOCKER_ADDR $COMPOSE_OPTIONS $VOLUMES -w /data $IMAGE tj3 $@
+exec docker run --rm -it $DOCKER_ADDR $COMPOSE_OPTIONS $VOLUMES -w /data $IMAGE tj $@

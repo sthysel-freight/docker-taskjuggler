@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# docker run -it --rm -v ${PWD}:/data -w /data sthysel/taskjuggler tj3 -o ./testrun template.tjp 
+
+set -e
+
+echo "Spinning up taskjuggler container"
+
+VERSION="latest"
+IMAGE="sthysel/taskjuggler:$VERSION"
+
+# Setup options for connecting to docker host
+if [ -z "$DOCKER_HOST" ]
+then
+    DOCKER_HOST="/var/run/docker.sock"
+fi
+if [ -S "$DOCKER_HOST" ]
+then
+    DOCKER_ADDR="-v $DOCKER_HOST:$DOCKER_HOST -e DOCKER_HOST"
+else
+    DOCKER_ADDR="-e DOCKER_HOST -e DOCKER_TLS_VERIFY -e DOCKER_CERT_PATH"
+fi
+
+# map local homedir to planner homedir
+VOLUMES="-v ${PWD}:/data/"
+
+exec docker run --rm -it $DOCKER_ADDR $COMPOSE_OPTIONS $VOLUMES -w /data $IMAGE tjman $@
