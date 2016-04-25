@@ -1,6 +1,6 @@
 # docker-taskjuggler
 
-Provides a taskjuggler container and helper scritp to manage tasks using taskjuggler.
+Provides a taskjuggler container and helper script to manage tasks using taskjuggler.
 
 
 ## taskjuggler helper script
@@ -19,4 +19,10 @@ as the container user's (planner) id.
 ```
 $ make build
 $ make testrun
+```
+
+# Install 
+
+```
+$ sudo bash -c 'JRUN=/usr/local/bin/taskjuggler; curl -L https://raw.githubusercontent.com/sthysel/docker-taskjuggler/master/taskjuggler > $JRUN && chmod +x $JRUN'
 ```
