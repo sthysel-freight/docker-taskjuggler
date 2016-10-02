@@ -1,7 +1,7 @@
 # a container for taskjuggler
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER https://github.com/sthysel/docker-taskjuggler
-ENV REFRESHED_AT 2016-03-31
+ENV REFRESHED_AT 2016-10-02
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -22,10 +22,6 @@ RUN gem install taskjuggler
 RUN groupadd group -g 1000
 RUN useradd -u 1000 -g group planner
 
-COPY ./entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
 USER planner
 
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["help"]
+CMD tj3
