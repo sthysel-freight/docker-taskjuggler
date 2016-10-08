@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/sthysel/nuhtml.svg)](https://microbadger.com/images/sthysel/docker-taskjuggler "Get your own image badge on microbadger.com")
+
 # docker-taskjuggler
 
 Provides a taskjuggler container and helper script to manage tasks using taskjuggler.
